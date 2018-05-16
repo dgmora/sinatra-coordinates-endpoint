@@ -22,7 +22,7 @@ bundle install
 You need to create a project in the google console as explained
 [here](https://developers.google.com/maps/documentation/geocoding/intro).
 
-Create a `.env` file in the root folder like this:
+Copy `.env.example` to `.env` and add the correct keys
 
 ```
 GOOGLE_API_KEY=PUT_THAT_KEY_HERE
