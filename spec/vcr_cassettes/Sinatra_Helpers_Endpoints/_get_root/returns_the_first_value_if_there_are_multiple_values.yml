@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=mainzerstr&key=<GOOGLE_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.5.1p57
+      Host:
+      - maps.googleapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 16 May 2018 16:04:42 GMT
+      Expires:
+      - Thu, 17 May 2018 16:04:42 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Encoding:
+      - gzip
+      Server:
+      - mafe
+      Content-Length:
+      - '757'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303433; quic=51303432; quic=51303431; quic=51303339;
+        quic=51303335,quic=":443"; ma=2592000; v="43,42,41,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAC/+2WTXObMBCG7/kVGs7Eg7CFoLfUcTpp4zjxxzRpJ8PIoBoSLLkgnKaZ/Pcu4GlsYwfa2mkP5YKxXthHWu3qfTxACGkxT9JIJRp6gz5nf8D1uLhnw8z3QZG4npzOpOBiVVnSL96KpJi4gk15Jta6LBTfeYwGKuZcaXpJngQyVpv0G7TqYcYLBmCXqYJXblZET/ovwQ0gmEIXLI2qwQZbhctUkfRYFKoHTUfaTMKvEJ7/kPKY3UnFUFumIvtwFWiVfBmX+dNQhImKmQrn3GUxZ27E5zxyzV3OoBsKwROgqpH/899GxrtEHolQcR+2IVMQuhJ7NKjA9rJ0xDvdF4RgbFejbZMt081kolgEhe6XS+r56WbpI9oXGU+ZgjVyF21irXx1tKgYHXXPUQ6ho9HgaJlEm3A55dmywLur09XGsGB+Uh7IxgRMMOAsURuH85Vi+Vir1XAwxQ6hpfnnKjHJVIdOs2FYxHRM4hTXuvhpwypD/wnueU0Gi2BqVzJQmzhmKfZLeyRvOCqUYvNCrSDYhJSnsRK+aeAmrhXOzXZPnvF3nV63M+yftt1253zY6a/tNG0e8vsZ5GsXmbRNgwCk6eDyTNYns998EmJQajnUsKtJ6mT1+WkZTZuxWIVQmFBpXpB9UMUpXxFEzONu6OepaAen773+bds5vBg5La/f69GPZwb1Pp1er1TdC8foz+j78gFHcy5SXt8HgP4VjECX+6Goczpt0y0DCR5OgrGMAyn9Xfb7TgT9NJHVlNuF+7Yqi8i1vUql/i+YlSH/xmqc+MOr/0alJiJ1HINUo22T7dWoQH/R0WIb6mh4hXKK13cqTdyghFDHxC+eJ9iwGi1MbGrRXZ5pRXQwAHWiO3Ci7cGkFAwtWIPFtd2sFBwUg/jfdCv5XCxqQ6aq3co+c9oy7KaFq31K7czuzKjcjcyT4+7bMWld9x9OoD1+HZ9d3t7VNirZvahzDVqCSouy7n3QDp4OfgBvaHyN3hAAAA==
+    http_version: 
+  recorded_at: Wed, 16 May 2018 16:04:42 GMT
+recorded_with: VCR 4.0.0

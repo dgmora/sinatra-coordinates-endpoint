@@ -17,4 +17,9 @@ class CoordinatesEndpoint < Sinatra::Base
     content_type :json
     get_root(params.fetch('query', ''))
   end
+
+  get '/raw' do
+    content_type :json
+    get_raw(params.fetch('query', ''))
+  end
 end
