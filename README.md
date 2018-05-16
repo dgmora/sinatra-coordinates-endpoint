@@ -26,7 +26,7 @@ Copy `.env.example` to `.env` and add the correct keys
 
 ```
 GOOGLE_API_KEY=PUT_THAT_KEY_HERE
-SECRET_KEY=1234 # You can use this key (as part of the exercise)
+SECRET_KEY=abcd # You can use this key (as part of the exercise)
 ```
 
 Start the server:
