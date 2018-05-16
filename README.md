@@ -35,7 +35,7 @@ Start the server:
 rackup config.ru
 ```
 
-And visit localhost:9292/?query=checkpoint%20charlie
+And visit localhost:9292/?query=checkpoint%20charlie&secret_key=abcd
 
 
 ## Decisions

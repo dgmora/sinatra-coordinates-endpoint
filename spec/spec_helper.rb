@@ -33,3 +33,7 @@ WebMock.disable_net_connect!(allow_localhost: true)
 def app
   CoordinatesEndpoint
 end
+
+def query_with_auth(query = 'checkpoint charlie')
+  get('/', secret_key: ENV['SECRET_KEY'], query: query)
+end
