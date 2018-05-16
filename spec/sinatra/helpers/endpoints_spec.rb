@@ -1,9 +1,17 @@
 RSpec.describe Sinatra::Helpers::Endpoints do
   describe '.get_root' do
-    context 'with empty query strings' do
-      it 'returns a 400 error' do
+    context 'with errors' do
+      it 'returns a 400 if there is no query' do
         get '/'
         expect(last_response).to be_bad_request
+      end
+
+      it 'returns a 500 custom error if google is down' do
+        stub_request(:any, /maps.googleapis.com/)
+          .to_return(status: 500, body: '{"status" : "Internal Server Error"}')
+        get('/', query: 'checkpoint charlie', timeout: 0.0000000001)
+        expect(last_response).to be_server_error
+        expect(last_response.body).to start_with ':see_no_evil:'
       end
     end
 
