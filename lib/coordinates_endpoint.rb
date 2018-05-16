@@ -1,5 +1,6 @@
 #!/usr/local/bin/ruby
 
+require 'dotenv/load'
 require 'sinatra/base'
 require 'sinatra/helpers/endpoints'
 require 'sinatra/extensions/filters'

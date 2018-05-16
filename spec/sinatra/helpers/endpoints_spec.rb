@@ -1,16 +1,15 @@
 RSpec.describe Sinatra::Helpers::Endpoints do
-  context 'with errors like' do
-    describe 'empty query strings' do
+  describe '.get_root' do
+    context 'with empty query strings' do
       it 'returns a 400 error' do
         get '/'
         expect(last_response).to be_bad_request
       end
     end
 
-    describe 'missing authentication' do
+    it 'returns the match' do
+      get('/', query: 'checkpoint charlie')
+      expect(last_response.body).to eq(lat: 52.5074434, lng: 13.3903913)
     end
-  end
-
-  context 'incorrect endpoint' do
   end
 end

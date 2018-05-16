@@ -9,4 +9,5 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rack-test'
   gem 'byebug'
+  gem 'dotenv'
 end
