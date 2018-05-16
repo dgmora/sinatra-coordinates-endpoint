@@ -54,6 +54,9 @@ I structured it in a way that the main class is just an entry point with routing
 and we handle the logic of the endpoint in a different class. If we would
 multiple endpoints we could reuse the client logic, but there's not need at the moment.
 
+I used restclient instead of the built-in http library as it's simpler, 
+and handles timeouts nicely
+
 ### VCR and testing
 
 Every case should be tested. I used VCR and webmock for that.
