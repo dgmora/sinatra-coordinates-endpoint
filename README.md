@@ -19,14 +19,14 @@ bundle install
 ```
 
 ## Usage
-You need to create a project in the google console as explained
-[here](https://developers.google.com/maps/documentation/geocoding/intro).
+You need to create a project and a key in the google console as explained
+[here](https://developers.google.com/maps/documentation/geocoding/intro) 
 
 Copy `.env.example` to `.env` and add the correct keys
 
 ```
 GOOGLE_API_KEY=PUT_THAT_KEY_HERE
-SECRET_KEY=1234 # This is the "real" key (as part of the exercise)
+SECRET_KEY=1234 # You can use this key (as part of the exercise)
 ```
 
 Start the server:
