@@ -2,8 +2,10 @@
 
 require 'dotenv/load'
 require 'sinatra/base'
-require 'sinatra/helpers/endpoints'
-require 'sinatra/extensions/filters'
+require 'rest-client'
+
+require_relative 'sinatra/helpers/endpoints'
+require_relative 'sinatra/extensions/filters'
 
 class CoordinatesEndpoint < Sinatra::Base
   helpers Sinatra::Helpers::Endpoints
@@ -12,6 +14,7 @@ class CoordinatesEndpoint < Sinatra::Base
   require_authentication!
 
   get '/' do
+    content_type :json
     get_root(params.fetch('query', ''))
   end
 end

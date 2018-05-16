@@ -19,19 +19,55 @@ bundle install
 ```
 
 ## Usage
+You need to create a project in the google console as explained
+[here](https://developers.google.com/maps/documentation/geocoding/intro).
+
+Create a `.env` file in the root folder like this:
+
+```
+GOOGLE_API_KEY=PUT_THAT_KEY_HERE
+SECRET_KEY=1234 # This is the "real" key (as part of the exercise)
+```
 
 Start the server:
 
 ```
-ruby coordinates-enpoint.rb
+rackup config.ru
 ```
 
-And visit localhost:4567
+And visit localhost:9292/?query=checkpoint%20charlie
 
 
 ## Decisions
+
+Some cases won't be covered: Bad route, wrong http verb, etc. It's out of the
+scope, as this is supposed to be doing 1 single thing, and taking care of that.
+Cases as errors in the google side or an address without geocoded address should
+be handled though.
 
 ### Sinatra
 
 I thought it was a good opportunity to give Sinatra a try, as rails felt like
 overkill for such a task
+
+
+### VCR
+
+Another option would have been mocking the requests, but as the google api returns quite
+some data, I thought it'd be easier to use VCR to cover all the cases without having to
+do trial and error for different cases (multiple results, no results, bad credentials..)
+
+
+### Configuration
+
+This will be handled by the gem `dotenv`. The real values will never be commited to github,
+but they can live locally in that file for the developer convenience. The real values
+for production will be loaded from the environment.
+
+For testing, we are taking care that `ENV['GOOGLE_API_KEY']` and `ENV['SECRET_KEY']` are
+filtered from the VCR cassettes, so we can store the requests withour fear of writing
+the keys. The key values changing won't be a problem. The key names changing would imply
+touching everything, but there's not a lot to be done there.
+
+If this would be a rails app we could opt for the encrypted credentials feature that is
+included.

@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=checkpoint%20charlie&key=<GOOGLE_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.5.1p57
+      Host:
+      - maps.googleapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 16 May 2018 15:21:33 GMT
+      Expires:
+      - Thu, 17 May 2018 15:21:33 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Encoding:
+      - gzip
+      Server:
+      - mafe
+      Content-Length:
+      - '544'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303433; quic=51303432; quic=51303431; quic=51303339;
+        quic=51303335,quic=":443"; ma=2592000; v="43,42,41,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAC/82V326bMBTG7/MUlq9phQMJoXf700xZtWXKdjFpqpADp8GasZkxqZIqz7KH2YvNQNpAICNVe7HcEHI+H37fl2PzMEAIYQVZznWG0RX6UfxgPg/7a1GmUWQUWRDKJJUCRFPZ0u9XcSlWgaAJFGLsOhfuCFstVRZLpftlepNC9VSzRCsAsyZPlqAwum2Id9azsKaKQaRYGJum9M9v6Cc8Y0UdVslcwwsh38KWqZ/o8OSYMnFxoyDfmgRW/czPb1C3kErONAspx5bpnC+5NN+Z3hzdBhzWwAPyYrOKM3GOpxO6Onod9WDjPwKkUcIEK0ZJszUEVAF9yvEVmT+ASqjY9EO/v+4BDmUutHrVQIlNiNePdkrWHNVMU24Oqqi95w53t7Um+E6aaLSGKNgfc527HJUHk4VKCFT9tRbqiBWvQCZQJGTaNJ2X06iZFO1SWaW6KIyGlyPbc13HbVvlYlVIiHPp+LbjE+dfsT89LigSKl0t5vPpt/mXoxDxmsF9arLu5hKmEgPNusvH5BPf8YhjD30yIi0Dxx6IN3TdSSk+lu465sEcpfE9nAkyHpr+Y9+zJ/0gE98ejkekFLdATk1RnRCnnIYQsKiM+V08+7iNVsn3z9PFr+twsZlxf2HP3qRfPzVGpT65xhZdcpbFiXm/VruLCR3Iu8BcQJWuHwe6hKiG2LwMqc6rmZ3f4MFu8Be9VHno0gcAAA==
+    http_version: 
+  recorded_at: Wed, 16 May 2018 15:21:33 GMT
+recorded_with: VCR 4.0.0

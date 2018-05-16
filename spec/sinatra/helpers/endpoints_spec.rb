@@ -7,9 +7,9 @@ RSpec.describe Sinatra::Helpers::Endpoints do
       end
     end
 
-    it 'returns the match' do
+    it 'returns the match', :vcr do
       get('/', query: 'checkpoint charlie')
-      expect(last_response.body).to eq(lat: 52.5074434, lng: 13.3903913)
+      expect(last_response.body).to eq({ lat: 52.5074434, lng: 13.3903913 }.to_json)
     end
   end
 end
