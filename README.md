@@ -45,13 +45,18 @@ scope, as this is supposed to be doing 1 single thing, and taking care of that.
 Cases as errors in the google side or an address without geocoded address should
 be handled though.
 
-### Sinatra
+### Sinatra and general design
 
 I thought it was a good opportunity to give Sinatra a try, as rails felt like
 overkill for such a task
 
+I structured it in a way that the main class is just an entry point with routing,
+and we handle the logic of the endpoint in a different class. If we would
+multiple endpoints we could reuse the client logic, but there's not need at the moment.
 
-### VCR
+### VCR and testing
+
+Every case should be tested. I used VCR and webmock for that.
 
 Another option would have been mocking the requests, but as the google api returns quite
 some data, I thought it'd be easier to use VCR to cover all the cases without having to
@@ -71,3 +76,7 @@ touching everything, but there's not a lot to be done there.
 
 If this would be a rails app we could opt for the encrypted credentials feature that is
 included.
+
+### Errors
+
+We propagate errors sent from google without failing abruptly, same for timeouts
