@@ -1,6 +1,9 @@
 module Sinatra
   module Helpers
     module Endpoints
+      
+      GEOCODING_URL = 'https://maps.googleapis.com/maps/api/geocode/json'.freeze
+      
       def get_root(query)
         verify_query!(query)
         geocode(query)
@@ -13,6 +16,7 @@ module Sinatra
 
       private
 
+      # Geocodes the query parameter and returns the coordinates
       def geocode(query)
         response = geocode_raw(query)
         body = JSON.parse(response.body)
@@ -27,8 +31,7 @@ module Sinatra
       def handle_error(e)
         halt(500, 'There was a timeout') if e.is_a?(RestClient::RequestTimeout)
         google_status = JSON.parse(e.response.body)['status']
-        # Here we could implement anything custom to not block our app if google is down
-        halt(e.response.code, ":see_no_evil: There was an error calling google: :#{google_status}")
+        halt(e.response.code, "There was an error calling google: :#{google_status}")
       end
 
       def verify_body!(body)
@@ -36,13 +39,11 @@ module Sinatra
         halt(404, 'There were no results')
       end
 
+      # Geocodes query and directly returns the json that google returns
       def geocode_raw(query)
-        url = 'https://maps.googleapis.com/maps/api/geocode/json'.freeze
         params = { 'key' => ENV['GOOGLE_API_KEY'], 'address' => query }
-        # We can set any custom timeout we want, in case google is giving problems
-        # not explicitely
         headers = { params: params, accept: 'json' }
-        RestClient::Request.execute(method: :get, url: url, headers: headers, timeout: 5)
+        RestClient::Request.execute(method: :get, url: GEOCODING_URL, headers: headers, timeout: 5)
       end
 
       def verify_query!(query)
